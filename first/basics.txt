@@ -1,0 +1,53 @@
+criar packagejson com yarn:
+* yarn init -y;
+
+adicionando os pacotes express, postgresql:
+* yarn add express pg pg-hstore sequelize;
+
+interface de linha de comando para o sequelize:
+* yarn add sequelize-cli -D;
+
+instalando o nodemon:
+* yarn add nodemon -D;
+
+criar um scripts para rodar o projeto:
+* "scripts": {
+    "dev": "nodemon src/server.js"
+   }
+
+criar um arquivo de rotas:
+* routes.js;
+
+rodar aplicação:
+* yarn dev;
+
+criar uma pasta database (conecxão para a base de dados):
+* arquivo index.js;
+
+criar uma pasta as configurações da base de dados:
+* pasta config/database.js;
+
+criar um arquivo .sequelizerc para criar os db conforme instrução abaixo:
+
+dentro da pasta database criar o seguinte:
+* nova pasta migrations;
+
+criar uma tabela:
+* yarn sequelize migration:create --name=create-(nome_tabela);
+
+adicionando tipo de dados na tabela:
+* yarn sequelize db:migrate;
+
+desfazer o último comando realizado:
+* yarn sequelize db:migrate:undo;
+
+atualizar uma tabela em um ambiente de produção:
+* yarn sequelize  migration:create --name=(add-age-field-to-users);
+
+criar um db com yarn:
+* yarn sequelize db:create;
+
+criar uma pasta models:
+
+criar uma pasta controllers:
+
